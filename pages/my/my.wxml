@@ -1,0 +1,59 @@
+<!--pages/my/my.wxml-->
+<view>
+	 <!-- SWIPER -->
+	 <swiper indicator-dots="{{imgUrls.length > 1}}" autoplay="{{true}}" interval="3000" duration="1000">
+    <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+      <swiper-item>
+        <image src="{{item.img}}" class="slide" data-id="{{index}}" />
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <!-- HEADER -->
+  <view class="head-wrapper logo-mode">
+    <image  class="logo" src="{{logoUrl}}"></image>
+    <view class="title">
+      <view class="name">{{SchoolName}}</view>
+      <image class="navigate" id="navigate" src="/res/img/park.png" bindtap="navigateTo"></image>
+    </view>
+  </view>
+
+  <!-- MORE -->
+  <view class="more">
+    <view  class="item">
+      <i class="cuIcon-location text-blue"></i>
+    <text decode="{{true}}" id="address" bindtap="navigateTo"> {{SchoolAddress}}</text> 
+    </view>
+    <view  class="item" id="phone" bindtap="navigateTo">
+      <i class="cuIcon-phone text-blue"></i>
+      {{SchoolPhone}}
+    </view>
+
+    <view class="item" id="discover" bind:tap="navigateTo">
+      <i class="cuIcon-discover"></i>
+      360全景
+    </view>
+  
+  </view>
+
+  <!-- DESC -->
+  <view class="desc">
+    <view class="title">简介</view>
+    <!-- TODO: rich-text -->
+    <text decode="{{true}}" class="content">{{SchoolDesc}}</text>
+  
+    <!--视频
+    <view class="video-wrapper">
+      <video src="{{VideoSrc}}" controls></video>
+      <view class="copyright" >该视频为<span class="name">「{{VideoOwner}}」</span>版权所有
+      </view>
+    </view>-->
+  </view>
+  <!--补充-->
+  <view class="desc">
+    <view class="title">校历</view>
+  <image src="{{calendar[0]}}" style="width: 100%;" data-src="{{calendar[0]}}" bindtap="preview"></image>
+  </view>
+  <!-- AD -->
+
+</view>

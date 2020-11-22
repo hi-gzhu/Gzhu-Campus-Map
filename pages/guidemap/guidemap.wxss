@@ -1,0 +1,273 @@
+map {
+  width: 100vw;
+  height: 100vh;
+}
+
+.sidebar {
+  position: absolute;
+  right: 20rpx;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+}
+.sidebar .item {
+  width: 80rpx;
+  height: 80rpx;
+}
+.item-img{
+  width: 80rpx;
+  height: 80rpx;
+}
+.picker {
+  position: absolute;
+  width: 100rpx;
+  right: -10%;
+  max-height: 600rpx;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 4px;
+  overflow-y: scroll;
+  opacity: 1;
+  transition: all 0.3s cubic-bezier(0.25, 0.75, 0.5, 1.25);
+}
+.picker.hide {
+  opacity: 0;
+  right: -120%;
+}
+.picker .option {
+  font-size: 10px;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  transition: 0.3s;
+  color: black;
+}
+.picker .option.selected {
+  background: #8bcfff;
+}
+.side {
+  position: absolute;
+  width: 80rpx;
+  height: 80rpx;
+  bottom: 140rpx;
+  transition: all 0.3s cubic-bezier(0.25, 0.75, 0.5, 1.25);
+}
+.side.location {
+  left: 120rpx;
+}
+.side.location.corner {
+  bottom: 28vh;
+  left: 40rpx;
+}
+.side.search {
+  right: 120rpx;
+}
+.side.toggle.location {
+  left: 60rpx;
+}
+.side.toggle.search {
+  right: 60rpx;
+}
+
+.bar {
+	padding-top: 80vh;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100%;
+  bottom: 0rpx;
+}
+
+.send {
+	width: 90rpx;
+	height: 90rpx;
+	background: #4facfe;
+	border-radius: 100%;
+	display: flex;
+}
+
+.add {
+	width: 100%;
+	height: 90rpx;
+	margin: 10rpx 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	z-index: 1005;
+	bottom: 5rpx;
+}
+
+.add view {
+	display: flex;
+	align-items: center;
+	font-size: 35rpx;
+	color: #fff;
+	z-index: 1005;
+	height: 90rpx;
+	width: 90rpx;
+	text-align: center;
+	line-height: 90rpx;
+}
+
+.add view text {
+	width: 100%;
+}
+
+.add1 {
+	width: 100%;
+	height: 90rpx;
+	margin: 10rpx 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	z-index: 999;
+	bottom: 5rpx;
+}
+
+
+@keyframes menuO {
+	form {
+		transform: rotate(0deg);
+		color: #fff
+	}
+
+	to {
+		transform: rotate(45deg);
+		color: #000
+	}
+}
+
+@keyframes menuC {
+	form {
+		transform: rotate(0deg);
+		color: #000
+	}
+
+	to {
+		transform: rotate(-180deg);
+		color: #fff
+	}
+}
+
+.menuOpen {
+	animation: 0.3s linear 0s menuO;
+	animation-fill-mode: both;
+	border-radius: 100%;
+	background-color: #66a6ff;
+}
+
+.menuClose {
+	animation: 0.3s linear 0s menuC;
+	animation-fill-mode: both
+}
+
+.tabicon {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	height: 100%;
+	width: 100%;
+}
+
+.menu {
+	padding: 20rpx;
+	color: #607d8b;
+	font-size: 30rpx;
+	font-weight: 600;
+	text-shadow: 5rpx 5rpx 25rpx #607d8b;
+}
+
+.bottom {
+	/* background: #607d8b; */
+	width: 100%;
+	flex: 1;
+	display: flex;
+	flex-direction: column-reverse;
+	padding-bottom: 110rpx;
+	position: relative;
+}
+
+.bottom .navlist {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	padding-bottom: 15rpx;
+}
+
+.item {
+	width: 25%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.item image {
+	width: 110rpx;
+	height: 110rpx;
+	margin-bottom: 15rpx;
+	/* box-shadow: 0rpx 0rpx 25rpx #607d8b; */
+	border-radius: 100%;
+}
+
+.item .string {
+	color: #607d8b;
+	font-size: 25rpx;
+	font-weight: 600;
+	/* text-shadow: 5rpx 5rpx 25rpx #607d8b; */
+}
+
+.animation-nav {
+	animation-name: bounceInDown;
+	animation-duration: .45s;
+	animation-timing-function: linear;
+	animation-fill-mode: both
+}
+
+.filter{
+	filter: blur(15rpx);
+}
+
+@keyframes bounceInDown {
+
+	0% {
+		opacity: 0;
+		transform: translateY(100%)
+	}
+
+	60% {
+		transform: translateY(-10%);
+	}
+
+	80% {
+		transform: translateY(10%);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0%)
+	}
+}
+/*外层容器，防止穿透点击*/
+.canui-load{
+	position:fixed;
+	width: 100%;
+	height: 100%;
+	top:0;
+	left:0;
+	background: rgba(0, 0, 0, 0.5);
+	z-index:99999;
+}
+/*关闭设置的阴影层，关闭底部距离，让它居中*/
+.canui-load .cu-load.load-modal{
+	box-shadow:inherit;
+	bottom:0;
+}
+/*修改加载圈圈颜色*/
+.canui-load .cu-load.load-modal::after{
+	border-left: 6rpx solid #0081ff;
+}

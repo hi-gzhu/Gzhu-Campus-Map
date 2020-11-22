@@ -1,0 +1,75 @@
+<!--pages/guidemap/guidemap.wxml-->
+<scroll-view scroll-y class="DrawerPage" scroll-with-animation="true" style="position:fixed;top:0;">
+  <cu-custom isBack="{{false}}" isCustom="{{true}}" isNav="{{false}}"  bgColor="bg-gradual-blue" >
+    <view slot="backText">返回</view>
+    <view slot="content" class="text-shadow-meows">
+      <text class="text-white text-bold">校园导览</text>
+    </view>
+  </cu-custom>
+  <!--加载数据-->
+  <view class="canui-load" wx:if="{{loadModal}}">
+    <view class='cu-load load-modal text-blue' wx:if="{{loadModal}}">
+        <view class='icon-discoverfill text-blue'></view>
+        <image src='/res/img/loading.png' class='png' mode='aspectFit'></image> 
+        <view class='gray-text'>加载中...</view>
+    </view>
+</view>
+  <!-- 导航栏组件 -->
+  <scroll-view scroll-x class="bg-white nav text-center" >
+    <view class="cu-item {{index==TabCur?'text-blue cur':''}}" wx:for="{{allMarkers}}" wx:key bind:tap="tabSelect"
+      data-id="{{index}}">
+      {{item.type}}
+    </view>
+  </scroll-view>
+  <map longitude="{{coreLongitude}}" latitude="{{coreLatitude}}" scale="{{scale}}" markers="{{sideBarItem}}"  bindmarkertap = "markerTap"
+    show-location="{{islocation? 'true': 'false'}}"
+    enable-rotate="{{true}}"
+    enable-overlooking="{{ true }}"
+    enable-3D="{{ true }}"
+    show-compass="{{true}}"
+    enable-traffic="{{true}}"
+    style="width: auto; height: 94vh;">
+  </map>
+    <!-- SIDE MENU -->
+    <view
+    class="sidebar"
+    hidden="{{toggleRoutes}}"
+    style="top:{{bounding.height + bounding.top + 200}}px"
+  >
+      <!-- Cats Picker -->
+      <view class="picker {{showCats ? '' : 'hide'}}" catchtap="selectCat">
+      <view wx:for="{{sideBarItem}}" wx:key="{{index}}" data-id="{{index}}"
+        class="option {{catIndex === index ? 'selected' : ''}}">
+        {{item.name}}
+      </view>
+    </view>
+   
+  </view>
+
+  <image class="side location toggle corner" src="/res/img/target.png" bind:tap="getLocation"></image>
+  
+</scroll-view>
+<block wx:if="{{Showtobarbtn}}">
+<view class='bar'>
+	<view class='tabicon'>
+		<view class='bottom' hidden='{{!isShow}}'>
+			<view class='navlist' wx:for='{{nav}}' wx:for-item="i" wx:key="index">
+        <view class='item  {{isShow?"animation-nav":""}}' style='animation-delay: {{(index+1)*0.1}}s;' wx:for='{{i.navigation}}'
+               wx:key="index"  bind:tap="ChooseNav" data-id="{{index+1}}">
+					<image mode='widthFix' src='{{item.src}}'></image>
+					<text class='string'>{{item.name}}</text>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="add1" hidden='{{isShow}}'>
+	<view class='send'></view>
+</view>
+<view class="add">
+	<view bindtap="onClickAdd">
+		<text class="cuIcon-add {{menuStyle}}"></text>
+	</view>
+</view>
+</block>
+

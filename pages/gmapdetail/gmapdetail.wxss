@@ -1,0 +1,86 @@
+/* pages/gmapdetail/gmapdetail.wxss */
+.head-wrapper {
+  position: relative;
+  background: #fff;
+}
+.head-wrapper.logo-mode .title {
+  padding: 0 20rpx 20rpx 180rpx;
+}
+.head-wrapper .logo {
+  position: absolute;
+  top: -60rpx;
+  left: 10rpx;
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #eee;
+  border: 4px solid #fff;
+}
+.head-wrapper .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 20rpx 20rpx 40rpx;
+  border-bottom: 1px solid #eee;
+}
+.head-wrapper .title .name {
+  font-size: 42rpx;
+}
+.head-wrapper .navigate {
+  width: 100rpx;
+  height: 90rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.desc {
+  min-height: 345rpx;
+  background: #fff;
+  padding: 20rpx;
+  box-shadow: 0 0 10px #eee;
+  margin-bottom: 20rpx;
+}
+.desc .title {
+  font-size: 36rpx;
+  margin-bottom: 20rpx;
+}
+.desc .title::before {
+  content: "|";
+  padding-right: 4px;
+  color: #37aafc;
+}
+.desc .content {
+  font-size: 14px;
+}
+.more {
+  background: #fff;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 0 10px #eee;
+  font-size: 12px;
+}
+.more i {
+  padding-right: 4rpx;
+  color: #37aafc;
+}
+
+
+/*外层容器，防止穿透点击*/
+.canui-load{
+	position:fixed;
+	width: 100%;
+	height: 100%;
+	top:0;
+	left:0;
+	background: rgba(0, 0, 0, 0.5);
+	z-index:99999;
+}
+/*关闭设置的阴影层，关闭底部距离，让它居中*/
+.canui-load .cu-load.load-modal{
+	box-shadow:inherit;
+	bottom:0;
+}
+/*修改加载圈圈颜色*/
+.canui-load .cu-load.load-modal::after{
+	border-left: 6rpx solid #0081ff;
+}

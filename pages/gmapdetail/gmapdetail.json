@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "banner":"/components/banner/banner",
+    "add-tips": "/components/addTips/addTips"
+  }
+}

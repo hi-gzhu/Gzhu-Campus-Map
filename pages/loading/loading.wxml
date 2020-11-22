@@ -1,0 +1,11 @@
+<!--pages/loading/loading.wxml-->
+<view class='loading'>
+  <div class="bouncing-loader">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <view class='footer'>
+   <image src='/res/img/copyright.png' mode="widthFix"></image>
+  </view>
+</view>

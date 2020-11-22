@@ -1,0 +1,152 @@
+<!--index.wxml-->
+<cu-custom bgImage="https://www.datealive.top/wp-content/uploads/2020/11/tobar.png" >
+    <view slot="content" class="text-shadow-meows">
+      <text class="text-white text-bold">校园导览</text>
+    </view>
+  </cu-custom>
+    <!--加载数据-->
+    <view class="canui-load" wx:if="{{loadModal}}">
+    <view class='cu-load load-modal text-blue' wx:if="{{loadModal}}">
+        <view class='icon-discoverfill text-blue'></view>
+        <image src='/res/img/loading.png' class='png' mode='aspectFit'></image> 
+        <view class='gray-text'>加载中...</view>
+    </view>
+</view>
+<image src='https://www.datealive.top/wp-content/uploads/2020/11/tobar.png' class='tn-bg bgimage'></image>
+
+<view class="padding-top-sl">
+  <!--轮播图-->
+  <banner swiperList="{{SwiperImgList}}" cloudRoot="{{cloudRoot}}" />
+</view>
+
+<view class="cu-list grid col-4 no-border bg-white">
+
+  <view class="cu-item">
+    <view class=' index-icon'>
+      <image src='/res/img/shouye.png' class='' mode='aspectFit'></image>
+    </view>
+    <text class="">首页</text>
+  </view>
+
+  <view class="cu-item">
+    <navigator url="../../pages/guidemap/guidemap" delta="1" hover-class="none">
+      <view class=' index-icon'>
+        <image src='/res/img/guide.png' class='' mode='aspectFit'></image>
+      </view>
+      <text class="">导览</text>
+    </navigator>
+  </view>
+
+  <view class="cu-item">
+    <navigator url="../../pages/search/search" delta="1" hover-class="none">
+      <view class=' index-icon'>
+        <image src='/res/img/sousuo.png' class='' mode='aspectFit'></image>
+      </view>
+      <text class="">搜索</text>
+    </navigator>
+  </view>
+  <view class="cu-item">
+    <navigator open-type="switchTab" url="../../pages/my/my" hover-class="none">
+      <view class=' index-icon'>
+        <image src='/res/img/xuexiao.png' class='' mode='aspectFit'></image>
+      </view>
+      <text class="">学校</text>
+    </navigator>
+  </view>
+
+</view>
+
+<view class="bg-white">
+  <navigator url="../../pages/guidemap/guidemap" delta="1" hover-class="none">
+    <view class="">
+      <image class="banner-index" mode="aspectFit"
+        src="/res/img/btnimg.png">
+      </image>
+    </view>
+  </navigator>
+</view>
+<view class="title-header bg-white">
+  <view class="title-text">
+    天 / 气 / 预 / 报
+  </view>
+</view>
+<block wx:if="{{isLoaded}}">
+  <view class="bg-white">
+  <swiper class="card-swiper-sai" duration="300" wx:if="{{NowWeather&&Address&&FutureWeather}}">
+    <swiper-item wx:if="{{NowWeather&&Address}}" class="margin-lg ">
+        <view class='bg-car shadow-blur bg-cart  margin-right  text-shadow'>
+            <view class='shadow'>
+                <view class="padding">
+                    <view class="flex justify-between">
+                        <view class='text-xxl'>
+                            <view class='text-bold margin-top-sm margin-left-min title-index'>
+                              {{Address[0].adm2}}市{{Address[0].name}}区
+                            </view>
+                            <view class='text-lg margin-top-sm margin-left-sm title-index name-title-a'>
+                                今天
+                            </view>
+                        </view>
+                       
+                    </view>
+                </view>
+                <view class='flex text-center text-grey  padding-bottom'>
+                    <view class='flex flex-sub flex-direction solid-right'>
+                        <view class="text-xl text-purple">{{NowWeather.temp}}℃</view>
+                        <view class="margin-top-sm">
+                            <text class='icon-hot'></text>温度</view>
+                    </view>
+                    <view class='flex flex-sub flex-direction solid-right'>
+                        <view class="text-xl text-orange">{{NowWeather.text}}</view>
+                        <view class="margin-top-sm">
+                            <text class='icon-share'></text>天气</view>
+                    </view>
+                    <view class='flex flex-sub flex-direction'>
+                        <view class="text-xl text-red">{{NowWeather.windDir}}{{NowWeather.windScale}}级</view>
+                        <view class="margin-top-sm">
+                            <text class='icon-like'></text>风向</view>
+                    </view>
+                </view>
+            </view>
+          </view>
+    </swiper-item>
+    <swiper-item wx:if="{{FutureWeather&&Address}}" wx:for="{{FutureWeather}}" wx:key="index" wx:if="{{index>=1}}" class="margin-lg ">
+        <view class='bg-car shadow-blur bg-cart  margin-right  text-shadow'>
+            <view class='shadow'>
+                <view class="padding">
+                    <view class="flex justify-between">
+                        <view class='text-xxl'>
+                            <view class='text-bold margin-top-sm margin-left-min title-index'>
+                                {{Address[0].adm2}}市{{Address[0].name}}区
+                            </view>
+                            <view class='text-lg margin-top-sm margin-left-sm title-index name-title-a'>
+                                {{item.fxDate}}
+                            </view>
+                        </view>
+                   
+                    </view>
+                </view>
+                <view class='flex text-center text-grey  padding-bottom'>
+                    <view class='flex flex-sub flex-direction solid-right'>
+                        <view class="text-xl text-purple">{{item.tempMin}}℃~{{item.tempMax}}℃</view>
+                        <view class="margin-top-sm">
+                            <text class='icon-hot'></text>温度</view>
+                    </view>
+                    <view class='flex flex-sub flex-direction solid-right'>
+                        <view class="text-xl text-orange">{{item.textDay}}</view>
+                        <view class="margin-top-sm">
+                            <text class='icon-share'></text>天气</view>
+                    </view>
+                    <view class='flex flex-sub flex-direction'>
+                        <view class="text-xl text-red">{{item.windDirDay}}{{item.windScaleDay}}级</view>
+                        <view class="margin-top-sm">
+                            <text class='icon-like'></text>风向</view>
+                    </view>
+                </view>
+            </view>
+          </view>
+    </swiper-item>
+</swiper>
+</view>
+</block>
+
+

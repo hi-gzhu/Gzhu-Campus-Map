@@ -1,0 +1,30 @@
+<!--pages/search/search.wxml-->
+<cu-custom bgColor="bg-gradual-blue" isCustom="{{true}}"><view slot="content">搜索</view></cu-custom>
+<view class="cu-bar search bg-white">
+    <view class="search-form round">
+      <text class="cuIcon-search"></text>
+      <input type="text" bindinput="bindSearchInput" placeholder="请输入地点名称关键词" value="{{keyword}}" confirm-type="search"></input>
+    </view>
+    <view class="action">
+      <button class="cu-btn bg-blue shadow-blur round" bind:tap="SendKeySearch">搜索</button>
+    </view>
+  </view>
+  <view class="cu-list menu-avatar">   
+  <block wx:for="{{showData}}" wx:key>
+    <view class="cu-item solids-bottom">
+          <image class="cu-avatar radius xl" src="{{cloudRoot+item.image[0].img}}"></image>
+          <view class="content padding-xl">
+            <view class="flex-sub text-black text-sm text-center">
+              <text class="text-center">{{item.name}}</text>
+            </view>
+          </view>
+          <view class="action">
+            <image class="navigate" src="/res/img/goto.png" bind:tap="NavGoToDetail" data-id="{{index}}"></image>
+          </view>
+        </view>
+  </block>
+  </view>
+
+
+
+

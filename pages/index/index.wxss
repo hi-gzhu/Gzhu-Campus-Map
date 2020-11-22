@@ -1,0 +1,290 @@
+@import "/colorui/icon.wxss";
+@import "/colorui/main.wxss";
+.tabbar{
+  background-color: #ffffff;
+}
+.bg-cyan{
+  background-color: #cce6ff;
+}
+.active{
+  color: #0081ff;
+}
+.default{
+  color:rgb(51, 24, 24);
+}
+
+/* pages/test/test.wxss */
+.tarbar-mimicry {
+  background-color: #F7FCFF;
+
+}
+/* 新拟态 */
+.mimicry {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1),
+    -5px -5px 10px rgba(255, 255, 255, 1);
+}
+
+.my-icon image {
+  width: 100rpx;
+  height: 100rpx;
+  display: inline-block;
+  margin: 0 auto
+}
+
+.text-my {
+  color: #aaa !important;
+}
+
+.container .box .img {
+  width: 60px;
+  height: 60px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1),
+    -10px -10px 20px rgba(255, 255, 255, 1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  transition: box-shadow .2s ease-out;
+  position: relative;
+}
+
+.container .box .img {
+  margin: 0 auto;
+  transition: width .2s ease-out;
+  /*实现效果以及实现方向以及实现时间 ease-out代表过度效果*/
+}
+
+.container .box p {
+  color: slategray;
+}
+
+.container .box .img:hover {
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.1),
+    0 0 0 rgba(255, 255, 255, 1),
+    inset 10px 10px 20px rgba(0, 0, 0, 0.1),
+    inset -10px -10px 20px rgba(255, 255, 255, 1);
+  /*内嵌投影值*/
+  transition: box-shadow .2s ease-out;
+}
+
+.container .box .img:hover img {
+  width: 58px;
+  transition: width .2s ease-out;
+}
+
+
+/* 底部标签栏 */
+.navbar__item .avatar {
+  background-color: currentColor;
+  border-radius: 100%;
+  transform: scale(0.8);
+  opacity: 0;
+  transition: all 0.55s cubic-bezier(0.71, 0.03, 0.23, 0.95);
+}
+
+.navbar__item.-blue {
+  color: #06b8ff;
+}
+
+.navbar__item.-orange {
+  color: #f2704d;
+}
+
+.navbar__item.-navy-blue {
+  color: #405fff;
+}
+
+.navbar__item.-yellow {
+  color: #f8cd4b;
+}
+
+.navbar__item.-purple {
+  color: #8444d6;
+}
+
+.avatar.-blue {
+  color: #06b8ff;
+}
+
+.avatar.-orange {
+  color: #f2704d;
+}
+
+.avatar.-navy-blue {
+  color: #405fff;
+}
+
+.avatar.-yellow {
+  color: #f8cd4b;
+}
+
+.avatar.-purple {
+  color: #8444d6;
+}
+
+.navbar__item:hover .avatar {
+  transform: translateY(-36px) scale(1.4);
+  opacity: 1;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1),
+    -1px -1px 5px rgba(255, 255, 255, 1);
+}
+
+.navbar__item:hover::before {
+  opacity: 1;
+}
+
+.navbar__item:hover::after {
+  opacity: 0.4;
+}
+
+.navbar__item:hover .navbar__icon {
+  transform: translateY(-23px) scale(1);
+  color: #fff;
+  transition-delay: 0.1s, 0.1s;
+}
+
+/* .navbar__item:hover .avatar .icon-name{
+    transform: translateY(-36px) scale(1.4);
+    opacity: 1;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.1),
+    -1px -1px 5px rgba(255,255,255,1);
+  } */
+.navbar__item:hover .icon-name {
+  /* font-size: 20rpx !important; */
+  /* margin-top: 20rpx !important; */
+  transition-delay: 0.1s, 0.1s;
+}
+
+.navbar__icon {
+  bottom: -13px;
+  transition: all 0.5s cubic-bezier(0.71, 0.03, 0.23, 0.95);
+  transition-delay: 0.1s;
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+}
+.bgimage{
+  width: 100%;
+  height: 200rpx;
+  display: inherit;
+}
+.padding-top-sl{
+  margin-top: -150rpx;
+}
+.index-icon image {
+  width: 120rpx;
+  height: 120rpx;
+  display: inline-block;
+}
+
+.banner-index{
+  width: 100%;
+  padding: 0 30rpx;
+  height: 220rpx;
+}
+
+.title-header{
+  display: flex;
+  height: 120rpx;
+  font-size: 40rpx;
+  align-items: center;
+  justify-content: center;
+  /* padding: 40rpx 0 0 0; */
+  font-weight: bold;
+  background-image: url(https://www.datealive.top/wp-content/uploads/2020/11/bgweather.png);
+  background-size: cover;
+}
+
+.margin-bottom-index{
+  margin-bottom: 110rpx
+}
+
+.search-index{
+  background: rgba(255, 255, 255, 0.4);
+}
+
+
+.index-title{
+  -webkit-line-clamp:1; 
+  display: -webkit-box;
+  -webkit-box-orient:vertical;
+  text-overflow: ellipsis;
+  overflow:hidden; 
+}
+
+
+
+
+
+.card-swiper-sai {
+  height: 400rpx;
+}
+
+.card-swiper-sai swiper-item {
+  width: 680rpx !important;
+  left: 0rpx !important;
+  box-sizing: border-box;
+  padding: 0rpx 0rpx 20rpx;
+  overflow: initial !important;
+}
+
+.card-swiper-sai swiper-item .bg-img {
+  width: 100%;
+  display: block;
+  height: 100%;
+  border-radius: 10rpx;
+  transform: scale(0.9);
+  transition: all 0.2s ease-in 0s;
+}
+
+.card-swiper-sai swiper-item.cur .bg-img {
+  transform: none;
+  transition: all 0.2s ease-in 0s;
+}
+
+.bg-car {
+  background-color: rgba(199, 236, 255, 1) !important;
+  color: #fff !important;
+  background-image: url(https://www.datealive.top/wp-content/uploads/2020/11/d1741b9b-1a1f-42a5-b3fc-17d92111d114.jpeg);
+  /* https://cdn.nlark.com/yuque/0/2019/png/280373/1570690136927-assets/web-upload/d4a1114b-f3ef-4845-8e89-a815092e108f.png */
+  background-size: cover;
+  -moz-background-size: cover;
+  border-radius: 8rpx
+}
+
+.margin-left-min {
+  margin-left: 15rpx;
+}
+
+.bg-cart{
+    background-color: #C7ECFF;
+}
+
+.title-index{
+  background-image:-webkit-linear-gradient(0deg, #1B6CFF, #1CA5FF); /*1B6CFF 1B42FF*/
+  background-clip: text;
+  -webkit-background-clip:text; 
+  -webkit-text-fill-color:transparent; 
+}
+
+
+/*外层容器，防止穿透点击*/
+.canui-load{
+	position:fixed;
+	width: 100%;
+	height: 100%;
+	top:0;
+	left:0;
+	background: rgba(0, 0, 0, 0.5);
+	z-index:99999;
+}
+/*关闭设置的阴影层，关闭底部距离，让它居中*/
+.canui-load .cu-load.load-modal{
+	box-shadow:inherit;
+	bottom:0;
+}
+/*修改加载圈圈颜色*/
+.canui-load .cu-load.load-modal::after{
+	border-left: 6rpx solid #0081ff;
+}

@@ -1,0 +1,42 @@
+<!--pages/gmapdetail/gmapdetail.wxml-->
+<scroll-view scroll-y class="DrawerPage" scroll-with-animation="true" style="position:fixed;top:0;">
+  <cu-custom isBack="{{false}}" isCustom="{{true}}" isNav="{{false}}"  bgColor="bg-gradual-blue" >
+    <view slot="backText">返回</view>
+    <view slot="content" class="text-shadow-meows">
+      <text class="text-white text-bold">{{Detaildatas.name}}</text>
+    </view>
+  </cu-custom>
+  <add-tips name="点击前往路线规划" custom/>
+    <!--加载数据-->
+    <view class="canui-load" wx:if="{{loadModal}}">
+    <view class='cu-load load-modal text-blue' wx:if="{{loadModal}}">
+        <view class='icon-discoverfill text-blue'></view>
+        <image src='/res/img/loading.png' class='png' mode='aspectFit'></image> 
+        <view class='gray-text'>加载中...</view>
+    </view>
+</view>
+  <banner swiperList="{{SwiperImgList}}" cloudRoot="{{cloudRoot}}"/>
+  <!-- HEADER -->
+  <view class="head-wrapper">
+    <view class="title">
+      <view class="name">{{Detaildatas.name}}</view>
+      <image class="navigate" src="/res/img/goto.png" bindtap="navigateTo"></image>
+    </view>
+  </view>
+    <!-- MORE -->
+    <block wx:if="{{Detaildatas.panorama}}">
+    <view class="more">
+    <view class="item" bind:tap="GotoWebView">
+      <i class="cuIcon-discover"></i>
+      360全景
+    </view>
+  </view>
+</block>
+
+  <!-- DESC -->
+  <view class="desc">
+    <view class="title">简介</view>
+    <!-- TODO: rich-text -->
+    <view class="content">{{Detaildatas.description}}</view>
+  </view>
+  </scroll-view>

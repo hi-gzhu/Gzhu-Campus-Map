@@ -1,0 +1,92 @@
+swiper {
+  height: 400rpx;
+  width: 100vw;
+  background: #eee;
+}
+swiper .slide {
+  width: 100%;
+  height: 100%;
+}
+.head-wrapper {
+  position: relative;
+  background: #fff;
+}
+.head-wrapper.logo-mode .title {
+  padding: 0 20rpx 20rpx 180rpx;
+}
+.head-wrapper .logo {
+  position: absolute;
+  top: -60rpx;
+  left: 10rpx;
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #eee;
+  border: 4px solid #fff;
+}
+.head-wrapper .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 20rpx 20rpx 40rpx;
+  border-bottom: 1px solid #eee;
+}
+.head-wrapper .title .name {
+  font-size: 42rpx;
+}
+.head-wrapper .navigate {
+  width: 100rpx;
+  height: 90rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.more {
+  background: #fff;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 0 10px #eee;
+  font-size: 12px;
+}
+.more i {
+  padding-right: 4rpx;
+  color: #37aafc;
+}
+.desc {
+  min-height: 345rpx;
+  background: #fff;
+  padding: 20rpx;
+  box-shadow: 0 0 10px #eee;
+  margin-bottom: 20rpx;
+}
+.desc .title {
+  font-size: 36rpx;
+  margin-bottom: 20rpx;
+}
+.desc .title::before {
+  content: "|";
+  padding-right: 4px;
+  color: #37aafc;
+}
+.desc .content {
+  font-size: 14px;
+}
+.video-wrapper {
+  margin: 30rpx 0;
+}
+.video-wrapper video {
+  width: 100%;
+}
+.video-wrapper .copyright {
+  font-size: 10px;
+  padding-top: 5px;
+  color: #aaa;
+}
+.video-wrapper .copyright .name {
+  color: #37aafc;
+}
+.adContainer {
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 20rpx;
+}

@@ -1,0 +1,7 @@
+/* pages/search/search.wxss */
+.navigate {
+  width: 100rpx;
+  height: 90rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
