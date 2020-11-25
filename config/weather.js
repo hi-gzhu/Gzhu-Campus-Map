@@ -1,11 +1,10 @@
-//key为和风天气的key，可以自己去申请
 export function NowWeather(location){
   return  new Promise((resolve,reject)=>{
     wx.request({
       url: 'https://devapi.qweather.com/v7/weather/now',
       method: 'get',
       data:{
-        key:'',
+        key:'49a21fb317bd4c61988c4ea4e23e466b',
         location
       },
       success:resolve,
@@ -19,7 +18,7 @@ export function SevenWeather(location){
       url: 'https://devapi.qweather.com/v7/weather/7d',
       method: 'get',
       data:{
-        key:'',
+        key:'49a21fb317bd4c61988c4ea4e23e466b',
         location
       },
       success:resolve,
@@ -33,7 +32,7 @@ export function Address(location){
       url: 'https://geoapi.qweather.com/v2/city/lookup',
       method: 'get',
       data:{
-        key:'',
+        key:'49a21fb317bd4c61988c4ea4e23e466b',
         location
       },
       success:resolve,

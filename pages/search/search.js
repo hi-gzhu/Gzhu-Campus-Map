@@ -67,20 +67,28 @@ Page({
   SendKeySearch() {
     var showData = new Array()
     var keyword = this.data.keyword.replace(/(^\s*)|(\s*$)/g, "")
-    const searchdata = this.data.markers
-    var reg =  new RegExp(keyword,'i')
-    searchdata.forEach(item => {
-      // console.log(item.data)
-       for (var i = 0; i < item.data.length; i++) {
-         if (reg.test(item.data[i].name)) {
-           showData.push(item.data[i])
-           //console.log("查询成功")
+    if(keyword.length>0){
+      const searchdata = this.data.markers
+      var reg =  new RegExp(keyword,'i')
+      searchdata.forEach(item => {
+        // console.log(item.data)
+         for (var i = 0; i < item.data.length; i++) {
+           if (reg.test(item.data[i].name)) {
+             showData.push(item.data[i])
+             //console.log("查询成功")
+           }
          }
-       }
-      this.setData({
-        showData
+        this.setData({
+          showData
+        })
+      });
+    }else{
+      wx.showToast({
+        title: '输入内容不能为空',
+        icon:'none'
       })
-    });
+    }
+
   
   },
   NavGoToDetail(e){

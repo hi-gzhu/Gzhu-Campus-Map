@@ -46,11 +46,11 @@
     </navigator>
   </view>
   <view class="cu-item">
-    <navigator open-type="switchTab" url="../../pages/my/my" hover-class="none">
+    <navigator url="../../pages/copyright/copyright" delta="1"  hover-class="none">
       <view class=' index-icon'>
-        <image src='/res/img/xuexiao.png' class='' mode='aspectFit'></image>
+        <image src='/res/img/about.png' class='' mode='aspectFit'></image>
       </view>
-      <text class="">学校</text>
+      <text class="">关于</text>
     </navigator>
   </view>
 

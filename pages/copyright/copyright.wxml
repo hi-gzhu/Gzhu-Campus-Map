@@ -1,0 +1,22 @@
+<!--pages/copyright/copyright.wxml-->
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">关于</view></cu-custom>
+<view class='margin-xl padding-xl radius shadow-warp bg-white margin-top'>
+  <view class='text-center margin-bottom text-lg  text-grey'>关于广大校园导览</view>
+  <view class='text-content'>
+    <view>Hi！欢迎使用广大校园导览！</view>
+    <view class='margin-top-sm'>广大导览小程序，是由Gzhu蒟蒻堆打造的一款导览服务类的小程序，在这里尽现广大校区，包含了景点、生活服务、教学楼、宿舍、餐饮、图书馆等。</view>
+    <view class='margin-top-sm'>在首页，你可以点击进入导览功能或搜索功能，同时还可以查看当前位置的七天天气预报。</view>
+    <view class='margin-top-sm'>点击学校，你可以看到声情并茂的校园介绍，让你身临其境般感受广大的校园历史以及氛围。</view>
+    <view class='margin-top-sm'>点击导览，各个校园建筑将一览无余，点击对应地点的位置图标或右侧悬浮栏，可以直达地点的详情页面，点击指向图标，自动路线规划为君一解路痴忧愁。</view>
+    <view class='margin-top-sm'>本项目已在Github开源，后续功能陆续上线中~敬请期待~</view>
+  </view>
+</view>
+<view class="margin-xl padding-xl radius shadow-warp bg-white margin-top">
+  <view class='text-center margin-bottom text-lg  text-black'>特别鸣谢</view>
+  <view class='text-content text-center'>
+    <view>@今日广大  提供部分图片</view>
+    <view class='margin-top-sm'>@广州大学 提供部分图片</view>
+    <view class='margin-top-sm'>...</view>
+  </view>
+
+</view>

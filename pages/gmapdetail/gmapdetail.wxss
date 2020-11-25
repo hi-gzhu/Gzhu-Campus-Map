@@ -51,6 +51,8 @@
 }
 .desc .content {
   font-size: 14px;
+  letter-spacing:3rpx;
+  font-weight:400;
 }
 .more {
   background: #fff;

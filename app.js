@@ -9,7 +9,7 @@ App({
         env: '',
         traceUser: true,
       })
-//你的云存储文件夹路径
+//云存储目录
       this.globalData.cloudRoot=''
     }
     // 获取系统状态栏信息
@@ -32,7 +32,8 @@ App({
       name: 'loadMarkers',
       // 传给云函数的参数
       data: {
-        base: 'markers'
+        base: 'markers',
+        orderby:'itemId'
       },
     })
     .then(res => {

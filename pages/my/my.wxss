@@ -47,6 +47,7 @@ swiper .slide {
   margin-bottom: 20rpx;
   box-shadow: 0 0 10px #eee;
   font-size: 12px;
+  letter-spacing:3rpx;
 }
 .more i {
   padding-right: 4rpx;
@@ -70,6 +71,8 @@ swiper .slide {
 }
 .desc .content {
   font-size: 14px;
+  letter-spacing:3rpx;
+  font-weight:400;
 }
 .video-wrapper {
   margin: 30rpx 0;

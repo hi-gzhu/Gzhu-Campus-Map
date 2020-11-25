@@ -9,7 +9,7 @@ const db = cloud.database()
 // 云函数入口函数
 exports.main = async (event, context) => {
   try {
-    return await db.collection(event.base).get({
+    return await db.collection(event.base).orderBy(event.orderby,'asc').get({
       success:function(res){
         return res
       }

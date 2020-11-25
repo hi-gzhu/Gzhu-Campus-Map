@@ -36,8 +36,8 @@ Page({
 					src: '/res/img/guide.png'
 				},
 				{
-					name: '学校简介',
-					src: '/res/img/xuexiao.png'
+					name: '关于',
+					src: '/res/img/about.png'
 				},
 
 			],
@@ -51,11 +51,12 @@ Page({
 				name: 'loadMarkers',
 				// 传给云函数的参数
 				data: {
-					base: 'markers'
+					base: 'markers',
+       	 orderby:'itemId'
 				},
 			})
 			.then(res => {
-				//console.log(res) // 3
+			//	console.log(res) // 3
 				_this.setData({
 					allMarkers: res.result.data,
 					loadModal: false,
@@ -76,13 +77,17 @@ Page({
 			name: 'loadMarkers',
 			// 传给云函数的参数
 			data: {
-				base: 'markers'
+				base: 'markers',
+        orderby:'itemId'
 			},
 		})
 		.then(res => {
 			//console.log(res) // 3
 			_this.setData({
-				sideBarItem: res.result.data[0].data
+				sideBarItem: res.result.data[0].data,
+				coreLongitude:res.result.data[0].midlongitude,
+			coreLatitude:res.result.data[0].midlatitude,
+			scale:res.result.data[0].scale
 			})
 		})
 		.catch(console.error)
@@ -102,7 +107,9 @@ Page({
 			scrollLeft: (e.currentTarget.dataset.id - 1) * 60,
 			sideBarItem: allMarkers[Id].data,
 			catIndex: 0,
-			scale:16
+			coreLongitude:allMarkers[Id].midlongitude,
+			coreLatitude:allMarkers[Id].midlatitude,
+			scale:allMarkers[Id].scale
 		})
 		// console.log(this.data.sideBarItem)
 	},
@@ -184,8 +191,8 @@ Page({
 				})
 				break;
 			case 2:
-				wx.switchTab({
-					url: '/pages/my/my',
+				wx.navigateTo({
+					url: '/pages/copyright/copyright',
 				})
 				break;
 

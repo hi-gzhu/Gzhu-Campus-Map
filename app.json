@@ -6,7 +6,8 @@
     "pages/guidemap/guidemap",
     "pages/gmapdetail/gmapdetail",
     "pages/search/search",
-    "pages/web-view/web-view"
+    "pages/web-view/web-view",
+    "pages/copyright/copyright"
   ],
   "window": {
     "backgroundTextStyle": "light",

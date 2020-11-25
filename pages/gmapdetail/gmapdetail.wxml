@@ -37,6 +37,6 @@
   <view class="desc">
     <view class="title">简介</view>
     <!-- TODO: rich-text -->
-    <view class="content">{{Detaildatas.description}}</view>
+    <text decode="{{true}}" class="content" selectable="{{true}}">{{Detaildatas.description}}</text>
   </view>
   </scroll-view>
